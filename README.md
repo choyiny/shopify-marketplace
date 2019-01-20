@@ -2,7 +2,7 @@
 This Ruby on Rails backend API is built for Shopify's Summer 2017 Developer Intern Challenge.
 
 ## Setup
-**Note**: This project requires Ruby 2.6.0, Docker, and Docker Compose.
+**Note**: This project requires Ruby 2.6.0, and PostgreSQL 9.6+.
 
 1. Clone this repository
 ```
@@ -16,13 +16,11 @@ $ rvm gemset use marketplace
 $ gem install bundler
 $ bundle install
 ```
-3. Run the postgres database
-```
-$ docker-compose up -d
-```
 4. Populate database with test data
 ```
-$ rails db:migrate && rails db:seed
+$ rails db:setup
+$ rails db:migrate
+$ rails db:seed
 ```
 ## How to run
 1. Run the postgres database
