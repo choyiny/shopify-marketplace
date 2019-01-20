@@ -1,7 +1,10 @@
 # Shopify Marketplace Challenge
-This Ruby on Rails backend API is built for Shopify's Summer 2017 Developer Intern Challenge.
+This Ruby on Rails backend API is built for Shopify's Summer 2019 Developer Intern Challenge.
 
-Postman API Documentation: https://documenter.getpostman.com/view/3226853/RzteSrzB
+- Github: https://github.com/choyiny/shopify-marketplace
+- Project Requirements: https://docs.google.com/document/d/1J49NAOIoWYOumaoQCKopPfudWI_jsQWVKlXmw1f1r-4/
+- Postman API Documentation: https://documenter.getpostman.com/view/3226853/RzteSrzB
+- Thought Process Documentation: https://docs.google.com/document/d/15PqivlOVbLhae0YpMr-H7g_ksGAy3l3M3TMk6aJdlgo/
 
 ## Setup
 **Note**: This project requires Ruby 2.5.1+, and PostgreSQL 9.6+.
