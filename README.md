@@ -1,6 +1,8 @@
 # Shopify Marketplace Challenge
 This Ruby on Rails backend API is built for Shopify's Summer 2017 Developer Intern Challenge.
 
+Postman API Documentation: https://documenter.getpostman.com/view/3226853/RzteSrzB
+
 ## Setup
 **Note**: This project requires Ruby 2.6.0, and PostgreSQL 9.6+.
 
@@ -22,12 +24,9 @@ $ rails db:setup
 $ rails db:migrate
 $ rails db:seed
 ```
+
 ## How to run
-1. Run the postgres database
-```
-$ docker-compose up -d
-```
-2. Run the rails server
+1. Run the rails server
 ```
 $ cd marketplace-api
 $ rails s

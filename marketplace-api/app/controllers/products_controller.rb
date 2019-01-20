@@ -4,16 +4,16 @@ class ProductsController < ApplicationController
   # GET /products
   #
   # Parameters:
-  # available=1 : return products with available inventory. Default 0.
-  # limit=n : return a maximum of `n` items. Default 10.
-  # page=n : return the `n`th page of all products. Default 0.
+  # available=1 : show products with available inventory. Default 0.
+  # limit=n : show a maximum of `n` items. Default 10.
+  # page=n : show the `n`th page of all products. Default 0.
   def index
     limit = params[:limit]&.to_i || 10
     page = params[:page]&.to_i || 0
     if params[:available] == "1"
-      @products = Product.offset(page * limit).limit(limit).available
+      @products = Product.order(:id).offset(page * limit).limit(limit).available
     else
-      @products = Product.offset(page * limit).limit(limit)
+      @products = Product.order(:id).offset(page * limit).limit(limit)
     end
     render json: @products
   end
