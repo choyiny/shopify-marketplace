@@ -11,9 +11,9 @@ class ProductsController < ApplicationController
     limit = params[:limit]&.to_i || 10
     page = params[:page]&.to_i || 0
     if params[:available] == "1"
-      @products = Product.order(:id).offset(page * limit).limit(limit).available
+      @products = Product.paginate(page, limit).available
     else
-      @products = Product.order(:id).offset(page * limit).limit(limit)
+      @products = Product.paginate(page, limit)
     end
     render json: @products
   end
@@ -25,11 +25,10 @@ class ProductsController < ApplicationController
 
   # POST /products/1/buy
   def buy
-    if @product.inventory_count == 0
-      render json: {success: false, message: I18n.t("products.no_stock")}
-    else
-      @product.decrement!(:inventory_count)
+    if @product.buy
       render json: {success: true, message: I18n.t("products.purchased")}
+    else
+      render json: {success: false, message: I18n.t("products.no_stock")}
     end
   end
 

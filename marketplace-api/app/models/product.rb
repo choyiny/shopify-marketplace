@@ -7,4 +7,18 @@ class Product < ApplicationRecord
 
   scope :available, -> { where("inventory_count > 0") }
 
+  scope :paginate, ->(page, limit) { order(:id).offset(page * limit).limit(limit) }
+
+  # Returns true if a purchase is bought, false otherwise
+  def buy
+    if @product.inventory_count == 0
+      return false
+    else
+      # for now, decrementing the inventory count when purchasing a product will do
+      self.decrement!(:inventory_count)
+      # in the future, could return a receipt number, etc.
+      return true
+    end
+  end
+
 end
