@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy, :buy]
 
   # GET /products
+  # Obtains a paginated list of products.
   #
   # Parameters:
   # available=1 : show products with available inventory. Default 0.
@@ -19,11 +20,13 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1
+  # Obtains details of a specific product.
   def show
     render json: @product
   end
 
   # POST /products/1/buy
+  # Purchases a product in stock.
   def buy
     if @product.buy
       render json: {success: true, message: I18n.t("products.purchased")}
