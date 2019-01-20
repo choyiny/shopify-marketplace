@@ -33,3 +33,4 @@ en:
   products:
     no_stock: "Not enough stock."
     purchased: "Purchased."
+    does_not_exist: "Product does not exist."

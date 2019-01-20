@@ -11,7 +11,7 @@ class Product < ApplicationRecord
 
   # Returns true if a purchase is bought, false otherwise
   def buy
-    if @product.inventory_count == 0
+    if self.inventory_count == 0
       return false
     else
       # for now, decrementing the inventory count when purchasing a product will do

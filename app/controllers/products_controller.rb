@@ -38,7 +38,11 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.find_by_id(params[:id])
+      if @product.nil?
+        render json: {success: false, message: I18n.t("products.does_not_exist")}
+        return
+      end
     end
 
     # Only allow a trusted parameter "white list" through.
