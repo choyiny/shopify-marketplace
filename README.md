@@ -4,7 +4,7 @@ This Ruby on Rails backend API is built for Shopify's Summer 2017 Developer Inte
 Postman API Documentation: https://documenter.getpostman.com/view/3226853/RzteSrzB
 
 ## Setup
-**Note**: This project requires Ruby 2.6.0, and PostgreSQL 9.6+.
+**Note**: This project requires Ruby 2.5.1+, and PostgreSQL 9.6+.
 
 1. Clone this repository
 ```
@@ -18,6 +18,7 @@ $ rvm gemset use marketplace
 $ gem install bundler
 $ bundle install
 ```
+3. Modify `config/database.yml` with your own credentials.
 4. Populate database with test data
 ```
 $ rails db:setup
@@ -31,3 +32,4 @@ $ rails db:seed
 $ cd marketplace-api
 $ rails s
 ```
+2. API is now available at `http://localhost:3000`
