@@ -32,7 +32,6 @@ $ rails db:seed
 ## How to run
 1. Run the rails server
 ```
-$ cd marketplace-api
 $ rails s
 ```
 2. API is now available at `http://localhost:3000`
