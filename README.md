@@ -22,7 +22,7 @@ $ docker-compose up -d
 ```
 4. Populate database with test data
 ```
-$ rake db:migrate && rake db:seed
+$ rails db:migrate && rails db:seed
 ```
 ## How to run
 1. Run the postgres database
