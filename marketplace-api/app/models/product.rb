@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
 
   validates :title, :price, :inventory_count, presence: true
+  validates :title, length: { minimum: 3 }
   validates :inventory_count, :price, numericality: {greater_than_or_equal_to: 0}
   validates :inventory_count, numericality: { only_integer: true }
 
